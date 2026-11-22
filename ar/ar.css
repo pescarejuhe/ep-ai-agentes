@@ -37,6 +37,10 @@ button{font:inherit;border:0;cursor:pointer;border-radius:99px;padding:13px 20px
   box-shadow:0 14px 40px rgba(0,0,0,.5)}
 .hint .dot{width:8px;height:8px;border-radius:99px;background:#ffb020;box-shadow:0 0 12px #ffb020;animation:p 1.4s infinite}
 @keyframes p{50%{opacity:.35}}
+.debug{position:fixed;z-index:6;right:12px;bottom:calc(80px + env(safe-area-inset-bottom,0px));
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:8px;
+  background:rgba(0,0,0,.5);color:#ffd08a;border:1px solid rgba(255,208,138,.3)}
+.debug[data-found="true"]{color:#8ef0b4;border-color:rgba(80,220,140,.4)}
 .badge{position:fixed;z-index:5;top:calc(16px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);
   font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:99px;
   background:rgba(8,12,22,.8);border:1px solid rgba(80,220,140,.4);color:#bff5cf;backdrop-filter:blur(12px)}

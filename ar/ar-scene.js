@@ -255,10 +255,25 @@ async function startAR() {
     requestAnimationFrame(frame);
   }
 
+  // diagnóstico visível: mostra o que o rastreador está vendo
+  const dbg = document.getElementById('debug');
+  let frames = 0;
+  const origRender = mindar.renderer.render.bind(mindar.renderer);
+  mindar.renderer.render = (sc, cam) => {
+    origRender(sc, cam);
+    frames++;
+  };
+  setInterval(() => {
+    if (!dbg) return;
+    dbg.textContent = found ? 'RASTREANDO' : 'procurando a tela…';
+    dbg.dataset.found = String(found);
+  }, 400);
+
   anchor.onTargetFound = () => {
     if (found) return;
     found = true;
     document.body.classList.add('found');
+    const d = document.getElementById('debug'); if (d) d.textContent = 'RASTREANDO';
     // entrada em cascata: os sete saem da tela
     for (const ag of agents) {
       setTimeout(() => { ag.state.appear = 0.001; ag.state.flash = 1; }, ag.delay * 1000);
