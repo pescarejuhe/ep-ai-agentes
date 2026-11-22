@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#05070d">
+<title>EP AI · realidade aumentada</title>
+<link rel="stylesheet" href="ar.css">
+</head>
+<body>
+  <div id="gl"></div>
+
+  <!-- tela de abertura: pede a câmera e explica o que fazer -->
+  <section id="intro" class="intro">
+    <div class="panel">
+      <div class="brand"><span class="mark"></span>EP AI</div>
+      <h1>Sete agentes.<br><em>Na sua frente.</em></h1>
+      <p>O time de agentes sai de dentro da tela e aparece na sua mesa, em realidade aumentada.</p>
+      <ol class="steps">
+        <li>Deixe esta tela aberta no computador, notebook ou tablet.</li>
+        <li>No celular, toque em <b>Abrir a câmera</b> e permita o acesso.</li>
+        <li>Aponte a câmera para <b>a tela</b> — os sete agentes aparecem sobre ela.</li>
+      </ol>
+      <div class="cta">
+        <button id="start" class="primary">Abrir a câmera</button>
+        <button id="sim" class="ghost">Ver sem câmera</button>
+      </div>
+      <p class="warn" id="warn" hidden></p>
+    </div>
+  </section>
+
+  <!-- durante o rastreio -->
+  <div id="hint" class="hint" hidden>
+    <span class="dot"></span>Aponte a câmera para a tela do computador
+  </div>
+
+  <!-- encontrado -->
+  <div id="badge" class="badge" hidden>tela reconhecida</div>
+
+  <script type="importmap">{"imports":{"three":"../vendor/three.module.js","three/addons/":"../vendor/three/addons/","three/":"../vendor/three/"}}</script>
+  <script type="module" src="ar-app.js"></script>
+</body>
+</html>

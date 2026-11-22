@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#05070d">
+<title>EP AI · Sete agentes, um cartão</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- câmera + cena -->
+  <div id="gl"></div>
+  <div id="grain"></div>
+
+  <header id="topbar">
+    <div class="brand"><span class="mark"></span>EP AI</div>
+    <div class="crumbs">Mente seu negócio, cuida do cliente e resolve o que precisa ser resolvido</div>
+  </header>
+
+  <div id="status"></div>
+
+  <div id="bubble"></div>
+  <div id="chips"></div>
+  <div id="focused"></div>
+
+  <div id="sheet"></div>
+  <div id="overlay"></div>
+  <div id="toast"></div>
+
+  <div id="dock">
+    <div class="dock-inner">
+      <button data-act="team" aria-label="Reapresentar o time">
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3 19c0-3 2.7-5 6-5s6 2 6 5"/><path d="M16 14c3 0 5 2 5 5"/></svg>
+      </button>
+      <button data-act="sound" aria-label="Ligar e desligar a voz">
+        <svg viewBox="0 0 24 24"><path d="M4 10v4h3l4 3V7L7 10H4z"/><path d="M15 9c1.2 1 1.2 5 0 6"/><path d="M18 6.5c2.6 2.6 2.6 8.4 0 11"/></svg>
+      </button>
+      <button data-act="sheet" aria-label="Ver o resumo">
+        <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 10h16M9 10v9"/></svg>
+      </button>
+      <button data-act="restart" aria-label="Recomeçar">
+        <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v4h-4"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="scrim" class="scrim">
+    <div class="panel">
+      <div class="eyebrow">EP AI · realidade aumentada</div>
+      <h2>Sete agentes. Um cartão.</h2>
+      <p>Aponte a câmera para o cartão impresso e veja o time de agentes sair dele, conversar e trabalhar na sua frente.</p>
+      <div class="qr">
+        <canvas id="qrcanvas" width="240" height="240"></canvas>
+        <div class="qr-hint">
+          <b>1.</b> Abra no celular<br>
+          <b>2.</b> Permita a câmera<br>
+          <b>3.</b> Mire no cartão inteiro
+        </div>
+      </div>
+      <div class="cta">
+        <button class="primary" data-act="start">Abrir a câmera</button>
+        <button class="ghost" data-act="sim">Ensaio sem câmera</button>
+      </div>
+      <div class="note-ssl">Se o navegador não liberar a câmera neste endereço, use o ensaio — a cena é a mesma.</div>
+    </div>
+    <button class="scrim-close" data-act="close" aria-label="Fechar">×</button>
+  </div>
+
+  <div id="actions" class="actions">
+    <a href="#" download>Baixar relatório</a>
+    <button data-act="sim2" onclick="location.search='sim=1&auto=1'">Ver no ensaio</button>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "/vendor/three.module.js",
+      "three/addons/": "/vendor/three/addons/"
+    }
+  }
+  </script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>

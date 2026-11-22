@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#05070d">
+<title>EP AI · sete agentes</title>
+<style>
+  html,body{margin:0;height:100%;background:#05070d;overflow:hidden;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
+  #screen{position:fixed;inset:0;width:100%;height:100%;object-fit:contain;background:#05070d}
+  .bar{position:fixed;left:0;right:0;bottom:0;display:flex;gap:12px;align-items:center;justify-content:center;
+    padding:14px;background:linear-gradient(transparent,rgba(3,5,10,.92));color:#93a4c4;font-size:12px}
+  .bar a{color:#7fd0ff;text-decoration:none;font-weight:700}
+  .qr{position:fixed;right:18px;top:18px;width:104px;height:104px;border-radius:12px;background:#fff;padding:6px;
+    box-shadow:0 14px 40px rgba(0,0,0,.6)}
+  @media (max-width:520px){.qr{width:84px;height:84px;right:10px;top:10px}}
+</style>
+</head>
+<body>
+  <img id="screen" src="../assets/tela-marcador.png" alt="tela-marcador">
+  <img class="qr" src="../qr.png" alt="QR code da experiência" id="qr">
+  <div class="bar">
+    <span>Esta é a tela-marcador. Abra o QR no celular e aponte a câmera para ela.</span>
+    <a href="../ar/arena.html" id="openar">abrir no celular</a>
+  </div>
+</body>
+</html>

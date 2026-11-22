@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#05070d">
+<title>EP AI · sete agentes</title>
+<link rel="stylesheet" href="app.css">
+<script>if (location.pathname.endsWith("/app/index.html")) history.replaceState(null,"",location.pathname.replace("/index.html","/"));</script>
+</head>
+<body>
+  <canvas id="stage"></canvas>
+  <header class="top">
+    <div class="brand"><span class="mark"></span>EP AI</div>
+    <div class="sub">Toque em um agente para conversar</div>
+  </header>
+  <main id="cards" class="cards" aria-live="polite"></main>
+  <section id="talk" class="talk" hidden>
+    <button class="close" id="close" aria-label="Fechar">×</button>
+    <div class="who"><i id="dot"></i><b id="tname"></b><span id="trole"></span></div>
+    <p id="tline"></p>
+    <div class="chips" id="tchips"></div>
+  </section>
+  <div id="sheet" class="sheet" hidden>
+    <div class="sheet-head"><span>EP AI</span><h3>Relatório semanal</h3></div>
+    <table><thead><tr><th>Agente</th><th>Tarefas</th><th></th></tr></thead><tbody id="rows"></tbody></table>
+    <div class="sheet-foot"><span>Total</span><b>2.230</b><i>71 h poupadas</i></div>
+  </div>
+  <script type="importmap">{"imports":{"three":"../vendor/three.module.js","three/addons/":"../vendor/three/addons/"}}</script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
